@@ -15,14 +15,14 @@ export class CertificationCardComponent {
   currentIndex: number = 0;
 
   certificates:any[] = [
-    { title: 'GitHub Pull Shark Badge', imageUrl: '/src/assets/pullshark.png' },
-    { title: 'Front End Engineer in Angular', imageUrl: '/src/assets/pro.png' },
-    { title: 'Responsive Web Design', imageUrl: '/src/assets/freecode.png' },
-    { title: 'Java (Basic) Certificate', imageUrl: '/src/assets/HackerRankJava.png' },
-    { title: 'CSS Certificate', imageUrl: '/src/assets/HRcss.png' },
-    { title: 'Problem Solving (Basic) Certificate', imageUrl: '/src/assets/Hc-pb.png' },
-    { title: 'SQL Certificate', imageUrl:'/src/assets/SkillRack SQL.png'},
-    { title: 'C Certificate', imageUrl:'/src/assets/skillrackc.png'}
+    { title: 'GitHub Pull Shark Badge', imageUrl: '/pullshark.png' },
+    { title: 'Front End Engineer in Angular', imageUrl: '/pro.png' },
+    { title: 'Responsive Web Design', imageUrl: 'assets/freecode.png' },
+    { title: 'Java (Basic) Certificate', imageUrl: '/HackerRankJava.png' },
+    { title: 'CSS Certificate', imageUrl: '/HRcss.png' },
+    { title: 'Problem Solving (Basic) Certificate', imageUrl: '/Hc-pb.png' },
+    { title: 'SQL Certificate', imageUrl:'/SkillRack SQL.png'},
+    { title: 'C Certificate', imageUrl:'/skillrackc.png'}
   ];
 
   moveCarousel(direction: 'prev' | 'next') {

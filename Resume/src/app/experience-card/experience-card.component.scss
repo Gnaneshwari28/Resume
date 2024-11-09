@@ -98,14 +98,54 @@
     width: 400px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     position: relative; /* Added to position close button inside */
-    grid-template-columns: repeat(2, 1fr); /* Create a grid layout for Lego effect */
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Create a grid layout for Lego effect */
     gap: 10px;
     transform-style: preserve-3d;
-    animation: legoIn 1s ease-out; /* Lego-like appearance effect */
+    transition: transform 0.5s ease, opacity 0.5s ease;
+
+    &.exploding {
+      animation: burstEffect 0.5s forwards;
+    }
   }
-  
+
+/* Particle style */
+.particle {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background-color: #f39c12;
+  border-radius: 50%;
+  animation: particleExplosion 1s ease-out forwards;
+  opacity: 0;
+}
+
+/* Animation for each particle */
+@keyframes particleExplosion {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(calc(300px * (random() - 0.5)), calc(300px * (random() - 0.5))) scale(0);
+    opacity: 0;
+  }
+}
+
+/* Randomize animation delay for particles */
+.particle:nth-child(n) {
+  animation-delay: calc(0.01s * n);
+}
+
+@keyframes burstEffect {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+}
+
   .close-btn {
     position: absolute;
     top: 10px;
@@ -125,40 +165,4 @@
     }
   }
   
-  .popup-content > *:nth-child(1) {
-    animation-delay: 0.1s;
-  }
-  .popup-content > *:nth-child(2) {
-    animation-delay: 0.2s;
-  }
-  .popup-content > *:nth-child(3) {
-    animation-delay: 0.3s;
-  }
-  .popup-content > *:nth-child(4) {
-    animation-delay: 0.4s;
-  }
 
-  /* Lego effect animation: grid content appears like assembling Lego bricks */
-@keyframes legoIn {
-    from {
-      transform: scale(0.5) rotateY(60deg); /* Start smaller and rotated */
-      opacity: 0;
-    }
-    to {
-      transform: scale(1) rotateY(0deg); /* End with full size and no rotation */
-      opacity: 1;
-    }
-  }
-  
-  /* Lego brick animation for each content block */
-  @keyframes legoBrickIn {
-    0% {
-      transform: scale(0) translateY(10px); /* Start smaller and with a slight offset */
-      opacity: 0;
-    }
-    100% {
-      transform: scale(1) translateY(0); /* Scale to full size and reset position */
-      opacity: 1;
-    }
-  }
-  

@@ -13,6 +13,7 @@ export class ExperienceCardComponent {
   popupVisible: boolean = false;  // Controls visibility of the popup
   popupData: { title: string, description: string } | null = null; // Data for the popup
 
+
   // Data for Intern and Full-time roles
   popupContent = {
     intern: {
@@ -40,9 +41,18 @@ export class ExperienceCardComponent {
     this.popupVisible = true;
   }
 
+    // Generate an array with 100 elements
+    particlesArray = Array(100).fill(0);
+
   // Function to close the popup
   closePopup(): void {
     this.popupVisible = false;
   }
+
+  triggerExplosion(): void {
+    document.querySelector('.popup-content')?.classList.add('exploding');
+    setTimeout(() => this.closePopup(), 700); // Hide popup after explosion animation
+  }
+  
 
 }

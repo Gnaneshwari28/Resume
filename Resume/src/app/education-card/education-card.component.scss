@@ -1,0 +1,25 @@
+.image-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .overlay-svg {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust to center the text perfectly */
+  }
+  
+  .inner-img {
+    position: absolute;
+    top: 50%;   /* Center vertically */
+    left: 50%;  /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust to center the inner image */
+    width: 128px;  /* Adjust size of inner image */
+    height: 128px;
+  }
+
+  .image-row {
+    display: flex;
+    justify-content: space-between;
+  }

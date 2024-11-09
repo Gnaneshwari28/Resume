@@ -215,7 +215,7 @@
   }
   
   .card {
-    background-color: #f8f8f8;
+    background-color: white;
     border-radius: 8px;
     padding: 1.5rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -228,10 +228,7 @@
     justify-content: space-between;
   }
   
-  .card h3 {
-    font-size: 1.5rem;
-    color: var(--gray-900);
-  }
+ 
   
   .card p {
     color: var(--gray-700);
@@ -250,11 +247,7 @@
     justify-content: space-between;
   }
   
-  .card .divider {
-    height: 2px;
-    background: var(--red-to-pink-to-purple-horizontal-gradient);
-    margin: 10px 0;
-  }
+ 
   
   @media screen and (max-width: 768px) {
     .grid-container {

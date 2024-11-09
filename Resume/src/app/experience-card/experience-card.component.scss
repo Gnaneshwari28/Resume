@@ -1,0 +1,164 @@
+.professional-details-card {
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
+   
+    .timeline {
+      position: relative;
+      padding-left: 30px;
+      
+      .timeline-item {
+        position: relative;
+        margin-bottom: 20px;
+        animation: slideIn 0.5s ease-out;
+        
+        .timeline-icon {
+          position: absolute;
+          left: -12px;
+          top: 0;
+          width: 20px;
+          height: 20px;
+          background:linear-gradient(180deg, var(--orange-red) 0%, var(--vivid-pink) 50%, var(--electric-violet) 100%) ;
+          border-radius: 50%;
+          animation: bounceIn 0.5s ease-out;
+        }
+  
+        .timeline-content {
+          padding-left: 40px;
+          background-color: #fff;
+          border-radius: 5px;
+          border: 1px solid #ddd;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+          h3 {
+            font-size: 1.2rem;
+            font-weight: bold;
+          }
+  
+          .date {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+          }
+          
+          p {
+            margin-top: 10px;
+            color: #333;
+          }
+        }
+      }
+    }
+  }
+  
+  @keyframes slideIn {
+    0% {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes bounceIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    50% {
+      transform: translateY(5px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+
+/* Popup Style */
+.popup-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color:  rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  .popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative; /* Added to position close button inside */
+    grid-template-columns: repeat(2, 1fr); /* Create a grid layout for Lego effect */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Create a grid layout for Lego effect */
+    gap: 10px;
+    transform-style: preserve-3d;
+    animation: legoIn 1s ease-out; /* Lego-like appearance effect */
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: #333;
+  }
+  
+  /* Animation for popup */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .popup-content > *:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+  .popup-content > *:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  .popup-content > *:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+  .popup-content > *:nth-child(4) {
+    animation-delay: 0.4s;
+  }
+
+  /* Lego effect animation: grid content appears like assembling Lego bricks */
+@keyframes legoIn {
+    from {
+      transform: scale(0.5) rotateY(60deg); /* Start smaller and rotated */
+      opacity: 0;
+    }
+    to {
+      transform: scale(1) rotateY(0deg); /* End with full size and no rotation */
+      opacity: 1;
+    }
+  }
+  
+  /* Lego brick animation for each content block */
+  @keyframes legoBrickIn {
+    0% {
+      transform: scale(0) translateY(10px); /* Start smaller and with a slight offset */
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1) translateY(0); /* Scale to full size and reset position */
+      opacity: 1;
+    }
+  }
+  

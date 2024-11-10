@@ -2,9 +2,7 @@
   <div class="carousel" [style.transform]="'translateX(' + -currentIndex * 100 + '%)'">
     <div class="carousel-item" *ngFor="let certificate of certificates">
       <img [src]=certificate.imageUrl alt="{{ certificate.title }}" class="d-block w-100">
-      <div class="carousel-caption">
-        <h5>{{ certificate.title }}</h5>
-      </div>
+      <p>{{certificate.title}}</p>
     </div>
   </div>
 

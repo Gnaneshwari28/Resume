@@ -1,8 +1,4 @@
-<p>maps works!</p>
-<google-map
-  height="400px"
-  width="100%"
-  [center]="center"
-  [zoom]="zoom"
-  [mapId]="mapId">
-</google-map>
+
+<div class="map-container">
+  <iframe [src]="locationUrl"  width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
